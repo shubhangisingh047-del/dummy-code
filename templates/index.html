@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Scholar Papers</title>
+</head>
+
+<body>
+
+<h2>Google Scholar Paper Finder</h2>
+
+<form method="POST">
+    Scholar ID:
+    <input type="text" name="scholar_id">
+    <button type="submit">Fetch Papers</button>
+</form>
+
+<hr>
+
+{% if papers %}
+<h3>Research Papers</h3>
+
+<ul>
+{% for p in papers %}
+<li>
+<b>{{ p.title }}</b><br>
+Year: {{ p.year }} <br>
+Venue: {{ p.venue }}
+</li>
+<br>
+{% endfor %}
+</ul>
+
+{% endif %}
+
+</body>
+</html>
